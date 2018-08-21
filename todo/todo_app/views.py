@@ -6,10 +6,11 @@ def index(request): #the index view
     if request.method == "POST": #checking if the request method is a POST
         if "taskAdd" in request.POST: #checking if there is a request to add a todo
             title = request.POST["title"] #title
-            date = str(request.POST["date"]) #date
+            due_date = str(request.POST["dueDate"]) #date
+            alert_date = str(request.POST["alertDate"])
             #category = request.POST["category_select"] #category
             description = request.POST["description"] #content
-            Todo = TodoList(title=title, description=description, due_date=date)
+            Todo = TodoList(title=title, description=description, due_date=due_date, alert_date=alert_date)
             Todo.save() #saving the todo 
             return redirect("/todo_app/") #reloading the page
         if "taskDelete" in request.POST: #checking if there is a request to delete a todo

@@ -12,8 +12,8 @@
 <div django-app="TaskManager">        
     <div class="container">
             <div class="content">
-            <h1>TodoApp</h1>
-            <p class="tagline">a Django todo app</p>
+            <h1>Simple Todo App</h1>
+            <p class="tagline">made with django</p>
             <form action="" method="post">
             {% csrf_token %} <!-- csrf token for basic security -->
                 <div class="inputContainer">
@@ -29,13 +29,11 @@
                     
                 </div>
                 <div class="inputContainer half last left">
-                    
-                    <input type="text" name="alert_due_time" id ="alert_due_time" placeholder ="Alert these days before Due Date">
-                    <label for ="alert_due_time">Configure Alert</label>
-                    
+                    <input type="date" id="alertDate" class="taskDate" name="alertDate">
+                    <label for="alertDate">Alert Date</label>
                 </div>
                 <div class="inputContainer half last right">
-                    <input type="date" id="dueDate" class="taskDate" name="date">
+                    <input type="date" id="dueDate" class="taskDate" name="dueDate">
                     <label for="dueDate">Due Date</label>
                 </div>
                 <div class="row">
