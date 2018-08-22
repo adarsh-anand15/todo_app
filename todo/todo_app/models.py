@@ -10,7 +10,8 @@ class TodoList(models.Model): #Todolist able name that inherits models.Model
     created = models.DateField(default=timezone.now().strftime("%Y-%m-%d")) # a date
     due_date = models.DateField(default=timezone.now().strftime("%Y-%m-%d")) # a date
     alert_date = models.DateField(default=timezone.now().strftime("%Y-%m-%d")) # a date
-    state = models.BooleanField(default = True)
+    #state = models.BooleanField(default = True)
+    status = models.CharField(max_length=10, default = "Pending")
     class Meta:
         ordering = ["due_date"] #ordering by the created field
     def __str__(self):
